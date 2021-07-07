@@ -16,6 +16,7 @@ struct HomeView: View {
             
             VStack {
                 
+                // QUOTE
                 Text("Our bodies communicate to us clearly and specifically, if we are willing to listen to them")
                     .foregroundColor(.white)
                     .bold()
@@ -23,6 +24,7 @@ struct HomeView: View {
                     .padding()
                     .padding(.top, 100)
                 
+                // AUTHOR
                 Text("- Shakti Gawain")
                     .foregroundColor(.white)
                     .font(.title2)

@@ -97,7 +97,7 @@ struct SignUpScreen: View {
                         .foregroundColor(Color(red: 161/255, green: 99/255, blue: 68/255))
                         .font(.caption)
                     
-                    // CREATE ACCOUNT BUTTON
+                    // LOGIN BUTTON
                     Button(action: {
                         
                         //TODO
