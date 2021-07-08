@@ -20,19 +20,7 @@ struct WorkoutsView: View {
             
             Image("background")
             
-            VStack {
-                
-                // CATEGORY PICKER
-                Picker(selection: $currentTab, label: Text("")) {
-                    Text("Cardio").tag(0)
-                    Text("Abs").tag(1)
-                    Text("Legs").tag(2)
-                    Text("Arms").tag(3)
-                }.pickerStyle(SegmentedPickerStyle())
-                .padding(.top, 80)
-                .padding(.horizontal, 20)
-                
-                Spacer()
+            ZStack {
                 
                 NavigationView {
                     
@@ -82,7 +70,7 @@ struct WorkoutsView: View {
                                             .cornerRadius(8)
                                     }).padding(1)
                                 }
-                            
+                                
                             // LEGS TAB
                             case 2:
                                 Text("Legs")
@@ -99,13 +87,23 @@ struct WorkoutsView: View {
                         
                     } // closing ZStack
                     
-                } // closing NavigationView
+                }
+                
+                // CATEGORY PICKER
+                Picker(selection: $currentTab, label: Text("")) {
+                    Text("Cardio").tag(0)
+                    Text("Abs").tag(1)
+                    Text("Legs").tag(2)
+                    Text("Arms").tag(3)
+                }.pickerStyle(SegmentedPickerStyle())
+                .padding(.top, -365)
+                .padding(.horizontal, 20)
                 
                 Spacer()
                 
-            // closing first VStack
+                // closing second ZStack
             }
-        // closing first ZStack
+            // closing first ZStack
         }
         
         
@@ -125,7 +123,7 @@ struct Cardio : View {
     var body : some View {
         
         Text("Cardio")
- 
+        
     }
 }
 
