@@ -29,81 +29,83 @@ struct WorkoutsView: View {
                     Text("Legs").tag(2)
                     Text("Arms").tag(3)
                 }.pickerStyle(SegmentedPickerStyle())
-                .padding(.top, 90)
+                .padding(.top, 80)
                 .padding(.horizontal, 20)
                 
                 Spacer()
                 
-                // CARDIO TAB
-                if currentTab == 0 {
+                NavigationView {
                     
-                    NavigationView {
+                    ZStack {
+                        
+                        Image("background")
+                            .offset(y: -70)
                         
                         ScrollView {
                             
-                            ForEach(cardioWorkouts.indices, id: \.self) { index in
-                                
-                                Button(action: {
-                                    
-                                    //TODO
-                                    
-                                }, label: {
-                                    Text(self.cardioWorkouts[index])
-                                        .font(.title2)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.white)
-                                        .frame(width: 360, height: 100, alignment: .center)
-                                        .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
-                                        .cornerRadius(8)
-                                }).padding(1)
-                                
-                            }
-                        }
-                    }
-                }
-                
-                // ABS TAB
-                if currentTab == 1 {
-                    
-                    NavigationView {
-                        
-                        ScrollView {
+                            switch currentTab {
                             
-                            ForEach(absWorkouts.indices, id: \.self) { index in
+                            // CARDIO TAB
+                            case 0:
+                                ForEach(cardioWorkouts.indices, id: \.self) { index in
+                                    
+                                    Button(action: {
+                                        
+                                        //TODO
+                                        
+                                    }, label: {
+                                        Text(self.cardioWorkouts[index])
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                            .frame(width: 360, height: 100, alignment: .center)
+                                            .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                                            .cornerRadius(8)
+                                    }).padding(1)
+                                }
                                 
-                                // TODO: to be transformed into buttons instead of rectangles with text
-                                ZStack {
+                            // ABS TAB
+                            case 1:
+                                ForEach(absWorkouts.indices, id: \.self) { index in
                                     
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .foregroundColor(.white)
-                                        .shadow(radius: 5)
-                                        .frame(width: 360, height: 100, alignment: .center)
-                                    
-                                    Text(self.absWorkouts[index])
-                                        .font(.title2)
-                                        .fontWeight(.bold)
-                                    
-                                }.padding([.leading, .trailing])
-                            }
-                        }
-                    }
+                                    Button(action: {
+                                        
+                                        //TODO
+                                        
+                                    }, label: {
+                                        Text(self.absWorkouts[index])
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                            .frame(width: 360, height: 100, alignment: .center)
+                                            .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                                            .cornerRadius(8)
+                                    }).padding(1)
+                                }
+                            
+                            // LEGS TAB
+                            case 2:
+                                Text("Legs")
+                                
+                            // ARMS TAB
+                            case 3:
+                                Text("Arms")
+                                
+                            default:
+                                Text("ERROR")
+                            } // closing switch
+                            
+                        }.offset(y: 80) // closing ScrollView
+                        
+                    } // closing ZStack
                     
-                }
-                
-                //LEGS TAB
-                if currentTab == 2 {
-                    Text("Legs")
-                }
-                
-                // ARMS TAB
-                if currentTab == 3 {
-                    Text("Arms")
-                }
+                } // closing NavigationView
                 
                 Spacer()
                 
+            // closing first VStack
             }
-            
+        // closing first ZStack
         }
         
         
