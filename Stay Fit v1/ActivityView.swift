@@ -8,51 +8,15 @@
 import SwiftUI
 
 struct ActivityView: View {
-    
-    @State var currentTab = 0
-    
     var body: some View {
         
-        VStack {
+        ZStack {
             
-            // CATEGORY PICKER
-            Picker(selection: $currentTab, label: Text("")) {
-                Text("Cardio").tag(0)
-                Text("Abs").tag(1)
-                Text("Legs").tag(2)
-                Text("Arms").tag(3)
-            }.pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal, 20)
+            Image("background")
             
-            NavigationView {
-                
-                ZStack {
-                    
-                    Image("background")
-                        .ignoresSafeArea()
-                        
-                        .navigationBarTitle("Activity")
-                    
-                    VStack {
-                        
-                        Spacer()
-                        
-                        Text("Activity")
-                        
-                        Spacer()
-                        
-                        Text("Second row")
-                        
-                        Spacer()
-                        
-                    }
-                    
-                }
-                
-            }
+            Text("ActivityView")
             
         }
-        
         
     }
 }
