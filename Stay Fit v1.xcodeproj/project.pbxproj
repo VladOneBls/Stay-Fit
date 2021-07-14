@@ -20,6 +20,9 @@
 		0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AA2614EADE00BEB5A5 /* Preview Assets.xcassets */; };
 		0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */; };
 		0EC81080261CD28C002A5B4A /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8107F261CD28C002A5B4A /* SignUpScreen.swift */; };
+		0EC833492698A4CA00AFEFC3 /* WorkoutDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC833482698A4CA00AFEFC3 /* WorkoutDetailedView.swift */; };
+		0EC8334B2698BEB000AFEFC3 /* WorkingSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8334A2698BEB000AFEFC3 /* WorkingSessionView.swift */; };
+		0EF91BEA269DD3C4001EDF2A /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF91BE9269DD3C4001EDF2A /* Testing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		0E3568AD2614EADE00BEB5A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3568AF2614EADE00BEB5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC8107F261CD28C002A5B4A /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		0EC833482698A4CA00AFEFC3 /* WorkoutDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailedView.swift; sourceTree = "<group>"; };
+		0EC8334A2698BEB000AFEFC3 /* WorkingSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingSessionView.swift; sourceTree = "<group>"; };
+		0EF91BE9269DD3C4001EDF2A /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +88,11 @@
 				0E1CDC6B2618FEF40036C510 /* HomeView.swift */,
 				0E1CDC5B2618F4380036C510 /* ExercisesView.swift */,
 				0E1CDC5E2618F6D80036C510 /* WorkoutsView.swift */,
+				0EC833482698A4CA00AFEFC3 /* WorkoutDetailedView.swift */,
+				0EC8334A2698BEB000AFEFC3 /* WorkingSessionView.swift */,
 				0E1CDC612618F6EF0036C510 /* ActivityView.swift */,
 				0E1CDC642618F6FC0036C510 /* SettingsView.swift */,
+				0EF91BE9269DD3C4001EDF2A /* Testing.swift */,
 			);
 			path = "Stay Fit v1";
 			sourceTree = "<group>";
@@ -169,11 +178,14 @@
 				0E1CDC6C2618FEF40036C510 /* HomeView.swift in Sources */,
 				0E3568A22614EADE00BEB5A5 /* AppDelegate.swift in Sources */,
 				0E1CDC652618F6FC0036C510 /* SettingsView.swift in Sources */,
+				0EC8334B2698BEB000AFEFC3 /* WorkingSessionView.swift in Sources */,
 				0E1CDC682618FCE90036C510 /* LoginScreen.swift in Sources */,
 				0E1CDC5F2618F6D80036C510 /* WorkoutsView.swift in Sources */,
 				0EC81080261CD28C002A5B4A /* SignUpScreen.swift in Sources */,
 				0E3568A42614EADE00BEB5A5 /* SceneDelegate.swift in Sources */,
 				0E1CDC622618F6EF0036C510 /* ActivityView.swift in Sources */,
+				0EF91BEA269DD3C4001EDF2A /* Testing.swift in Sources */,
+				0EC833492698A4CA00AFEFC3 /* WorkoutDetailedView.swift in Sources */,
 				0E1CDC5C2618F4380036C510 /* ExercisesView.swift in Sources */,
 				0E3568A62614EADE00BEB5A5 /* ContentView.swift in Sources */,
 			);

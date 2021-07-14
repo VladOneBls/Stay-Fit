@@ -25,7 +25,7 @@ struct ExercisesView: View {
                     ForEach(exercises.indices, id: \.self) { index in
                         
                         NavigationLink(
-                            destination: Text("Detailed View"),
+                            destination: WorkoutDetailedView(),
                             label: {
                                 Text(self.exercises[index])
                                     .font(.title2)
