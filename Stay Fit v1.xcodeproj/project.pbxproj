@@ -10,9 +10,7 @@
 		0E1CDC5C2618F4380036C510 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CDC5B2618F4380036C510 /* ExercisesView.swift */; };
 		0E1CDC5F2618F6D80036C510 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CDC5E2618F6D80036C510 /* WorkoutsView.swift */; };
 		0E1CDC622618F6EF0036C510 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CDC612618F6EF0036C510 /* ActivityView.swift */; };
-		0E1CDC652618F6FC0036C510 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CDC642618F6FC0036C510 /* SettingsView.swift */; };
 		0E1CDC682618FCE90036C510 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CDC672618FCE90036C510 /* LoginScreen.swift */; };
-		0E1CDC6C2618FEF40036C510 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CDC6B2618FEF40036C510 /* HomeView.swift */; };
 		0E3568A22614EADE00BEB5A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3568A12614EADE00BEB5A5 /* AppDelegate.swift */; };
 		0E3568A42614EADE00BEB5A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3568A32614EADE00BEB5A5 /* SceneDelegate.swift */; };
 		0E3568A62614EADE00BEB5A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3568A52614EADE00BEB5A5 /* ContentView.swift */; };
@@ -29,9 +27,7 @@
 		0E1CDC5B2618F4380036C510 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 		0E1CDC5E2618F6D80036C510 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		0E1CDC612618F6EF0036C510 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
-		0E1CDC642618F6FC0036C510 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0E1CDC672618FCE90036C510 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
-		0E1CDC6B2618FEF40036C510 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0E35689E2614EADE00BEB5A5 /* Stay Fit v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stay Fit v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3568A12614EADE00BEB5A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3568A32614EADE00BEB5A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,13 +81,11 @@
 				0E3568A92614EADE00BEB5A5 /* Preview Content */,
 				0E1CDC672618FCE90036C510 /* LoginScreen.swift */,
 				0EC8107F261CD28C002A5B4A /* SignUpScreen.swift */,
-				0E1CDC6B2618FEF40036C510 /* HomeView.swift */,
-				0E1CDC5B2618F4380036C510 /* ExercisesView.swift */,
 				0E1CDC5E2618F6D80036C510 /* WorkoutsView.swift */,
 				0EC833482698A4CA00AFEFC3 /* WorkoutDetailedView.swift */,
 				0EC8334A2698BEB000AFEFC3 /* WorkingSessionView.swift */,
+				0E1CDC5B2618F4380036C510 /* ExercisesView.swift */,
 				0E1CDC612618F6EF0036C510 /* ActivityView.swift */,
-				0E1CDC642618F6FC0036C510 /* SettingsView.swift */,
 				0EF91BE9269DD3C4001EDF2A /* Testing.swift */,
 			);
 			path = "Stay Fit v1";
@@ -175,9 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E1CDC6C2618FEF40036C510 /* HomeView.swift in Sources */,
 				0E3568A22614EADE00BEB5A5 /* AppDelegate.swift in Sources */,
-				0E1CDC652618F6FC0036C510 /* SettingsView.swift in Sources */,
 				0EC8334B2698BEB000AFEFC3 /* WorkingSessionView.swift in Sources */,
 				0E1CDC682618FCE90036C510 /* LoginScreen.swift in Sources */,
 				0E1CDC5F2618F6D80036C510 /* WorkoutsView.swift in Sources */,
