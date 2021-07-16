@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,10 +17,11 @@
 		0E3568A82614EADE00BEB5A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568A72614EADE00BEB5A5 /* Assets.xcassets */; };
 		0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AA2614EADE00BEB5A5 /* Preview Assets.xcassets */; };
 		0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */; };
+		0E3C85A626A1C71100C75A45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */; };
 		0EC81080261CD28C002A5B4A /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8107F261CD28C002A5B4A /* SignUpScreen.swift */; };
 		0EC833492698A4CA00AFEFC3 /* WorkoutDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC833482698A4CA00AFEFC3 /* WorkoutDetailedView.swift */; };
 		0EC8334B2698BEB000AFEFC3 /* WorkingSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8334A2698BEB000AFEFC3 /* WorkingSessionView.swift */; };
-		0EF91BEA269DD3C4001EDF2A /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF91BE9269DD3C4001EDF2A /* Testing.swift */; };
+		40BA9B4B8F960BC6B98C2901 /* Pods_Stay_Fit_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +37,13 @@
 		0E3568AA2614EADE00BEB5A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E3568AD2614EADE00BEB5A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3568AF2614EADE00BEB5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EC8107F261CD28C002A5B4A /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		0EC833482698A4CA00AFEFC3 /* WorkoutDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailedView.swift; sourceTree = "<group>"; };
 		0EC8334A2698BEB000AFEFC3 /* WorkingSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingSessionView.swift; sourceTree = "<group>"; };
-		0EF91BE9269DD3C4001EDF2A /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		414B19E3D455446E4B6B0C5D /* Pods-Stay Fit v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stay Fit v1.release.xcconfig"; path = "Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1.release.xcconfig"; sourceTree = "<group>"; };
+		7AA906638EC09DEF4F5B901F /* Pods-Stay Fit v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stay Fit v1.debug.xcconfig"; path = "Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1.debug.xcconfig"; sourceTree = "<group>"; };
+		EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stay_Fit_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BA9B4B8F960BC6B98C2901 /* Pods_Stay_Fit_v1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				0E3568A02614EADE00BEB5A5 /* Stay Fit v1 */,
 				0E35689F2614EADE00BEB5A5 /* Products */,
+				B3CF534D036C56DB8E852383 /* Pods */,
+				858178825E16A6D1967ED8BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,7 @@
 				0E3568A32614EADE00BEB5A5 /* SceneDelegate.swift */,
 				0E3568A52614EADE00BEB5A5 /* ContentView.swift */,
 				0E3568A72614EADE00BEB5A5 /* Assets.xcassets */,
+				0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */,
 				0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */,
 				0E3568AF2614EADE00BEB5A5 /* Info.plist */,
 				0E3568A92614EADE00BEB5A5 /* Preview Content */,
@@ -86,7 +94,6 @@
 				0EC8334A2698BEB000AFEFC3 /* WorkingSessionView.swift */,
 				0E1CDC5B2618F4380036C510 /* ExercisesView.swift */,
 				0E1CDC612618F6EF0036C510 /* ActivityView.swift */,
-				0EF91BE9269DD3C4001EDF2A /* Testing.swift */,
 			);
 			path = "Stay Fit v1";
 			sourceTree = "<group>";
@@ -99,6 +106,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		858178825E16A6D1967ED8BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3CF534D036C56DB8E852383 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AA906638EC09DEF4F5B901F /* Pods-Stay Fit v1.debug.xcconfig */,
+				414B19E3D455446E4B6B0C5D /* Pods-Stay Fit v1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3568B22614EADE00BEB5A5 /* Build configuration list for PBXNativeTarget "Stay Fit v1" */;
 			buildPhases = (
+				EF6C66D5EBF32594C83AAA75 /* [CP] Check Pods Manifest.lock */,
 				0E35689A2614EADE00BEB5A5 /* Sources */,
 				0E35689B2614EADE00BEB5A5 /* Frameworks */,
 				0E35689C2614EADE00BEB5A5 /* Resources */,
+				2A430893C94A59F32BC4EA29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,12 +183,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */,
+				0E3C85A626A1C71100C75A45 /* GoogleService-Info.plist in Resources */,
 				0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */,
 				0E3568A82614EADE00BEB5A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A430893C94A59F32BC4EA29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6C66D5EBF32594C83AAA75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stay Fit v1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E35689A2614EADE00BEB5A5 /* Sources */ = {
@@ -176,7 +245,6 @@
 				0EC81080261CD28C002A5B4A /* SignUpScreen.swift in Sources */,
 				0E3568A42614EADE00BEB5A5 /* SceneDelegate.swift in Sources */,
 				0E1CDC622618F6EF0036C510 /* ActivityView.swift in Sources */,
-				0EF91BEA269DD3C4001EDF2A /* Testing.swift in Sources */,
 				0EC833492698A4CA00AFEFC3 /* WorkoutDetailedView.swift in Sources */,
 				0E1CDC5C2618F4380036C510 /* ExercisesView.swift in Sources */,
 				0E3568A62614EADE00BEB5A5 /* ContentView.swift in Sources */,
@@ -315,6 +383,7 @@
 		};
 		0E3568B32614EADE00BEB5A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA906638EC09DEF4F5B901F /* Pods-Stay Fit v1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -336,6 +405,7 @@
 		};
 		0E3568B42614EADE00BEB5A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414B19E3D455446E4B6B0C5D /* Pods-Stay Fit v1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

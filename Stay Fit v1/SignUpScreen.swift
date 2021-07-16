@@ -103,7 +103,7 @@ struct SignUpScreen: View {
                         //TODO
                         
                     }, label: {
-                        Text("Login")
+                        Text("Sign In")
                             .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
