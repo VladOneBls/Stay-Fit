@@ -269,74 +269,71 @@ struct HomeView: View {
     @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Image("background")
-                    .edgesIgnoringSafeArea(.all)
-                    .navigationTitle("")
-                //.navigationBarHidden(true)
+        ZStack {
+            Image("background")
+                .edgesIgnoringSafeArea(.all)
+                .navigationTitle("")
+            
+            VStack {
+                // QUOTE
+                Text("Our bodies communicate to us clearly and specifically, if we are willing to listen to them")
+                    .foregroundColor(.black)
+                    .font(.title2)
+                    .padding(.horizontal, 30)
+                    .padding(.top, 40)
                 
-                VStack {
-                    // QUOTE
-                    Text("Our bodies communicate to us clearly and specifically, if we are willing to listen to them")
-                        .foregroundColor(.black)
-                        .font(.title2)
-                        .padding(.horizontal, 30)
-                        .padding(.top, 40)
+                // AUTHOR
+                Text("- Shakti Gawain")
+                    .foregroundColor(.black)
+                    .font(.title2).bold()
+                    .padding()
+                    .padding(.leading, 200)
+                
+                Spacer()
+                
+                HStack {
+                    NavigationLink(destination: WorkoutsView(), label: {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.black)
+                                .frame(width: 170, height: 170, alignment: .center)
+                                .cornerRadius(10)
+                            Text("Workouts")
+                                .foregroundColor(.white)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                        }
+                    })
                     
-                    // AUTHOR
-                    Text("- Shakti Gawain")
-                        .foregroundColor(.black)
-                        .font(.title2).bold()
-                        .padding()
-                        .padding(.leading, 200)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        NavigationLink(destination: WorkoutsView(), label: {
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.black)
-                                    .frame(width: 170, height: 170, alignment: .center)
-                                    .cornerRadius(10)
-                                Text("Workouts")
-                                    .foregroundColor(.white)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                            }
-                        })
-                        
-                        NavigationLink(destination: ExercisesView(), label: {
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.black)
-                                    .frame(width: 170, height: 170, alignment: .center)
-                                    .cornerRadius(10)
-                                Text("Exercises")
-                                    .foregroundColor(.white)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                            }
-                        })
-                    }
-                    
-                    // SIGN OUT BUTTON
-                    Button {
-                        viewModel.signOut()
-                    } label: {
-                        Text("Sign Out")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .frame(width: 100, height: 35, alignment: .center)
-                            .background(Color(red: 243/255, green: 189/255, blue: 126/255))
-                            .cornerRadius(5)
-                            .padding(.top, 30)
-                    }
-                    
-                    Spacer()
+                    NavigationLink(destination: ExercisesView(), label: {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.black)
+                                .frame(width: 170, height: 170, alignment: .center)
+                                .cornerRadius(10)
+                            Text("Exercises")
+                                .foregroundColor(.white)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                        }
+                    })
                 }
+                
+                // SIGN OUT BUTTON
+                Button {
+                    viewModel.signOut()
+                } label: {
+                    Text("Sign Out")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: 100, height: 35, alignment: .center)
+                        .background(Color(red: 243/255, green: 189/255, blue: 126/255))
+                        .cornerRadius(5)
+                        .padding(.top, 30)
+                }
+                
+                Spacer()
             }
         }.onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 161/255, green: 99/255, blue: 68/255))]
@@ -511,7 +508,7 @@ struct DetailedWorkoutView: View {
                     } // closing switch
                     
                     NavigationLink(
-                        destination: WorkingSessionView(),
+                        destination: WorkingOutSessionView(),
                         label: {
                             Text("START")
                                 .font(.title3)
@@ -528,109 +525,79 @@ struct DetailedWorkoutView: View {
     }
 }
 
-struct WorkingSessionView: View {
+struct WorkingOutSessionView: View {
     
-    let font = Font.system(size: 70).bold()
+    @ObservedObject var timerManager = TimerManager()
     
-    @State var start = false
-    @State var to : CGFloat = 0
-    @State var seconds = 30
-    @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    var exerciseTime = 20
     
     var body: some View {
         VStack {
-            Rectangle() // replace with workout image
+            Rectangle()
                 .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
-                .frame(width: 350, height: 200)
+                .frame(width: 380, height: 200)
                 .cornerRadius(20)
             
-            Text("ExerciseName") // replace with exercise name
+            Text("ExerciseName")
                 .font(.largeTitle).bold()
                 .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
-                .padding(.top, 10)
             
-            // COUNTDOWN TIMER
-            VStack {
-                // Circle + Countdown
-                ZStack {
-                    Circle()
-                        .trim(from: 0, to: 1)
-                        .stroke(Color.black.opacity(0.09), style: StrokeStyle(lineWidth: 25, lineCap: .round))
-                        .frame(width: 220, height: 250)
-                    
-                    Circle()
-                        .trim(from: 0, to: self.to)
-                        .stroke((Color(red: 243/255, green: 189/255, blue: 126/255)), style: StrokeStyle(lineWidth: 25, lineCap: .round))
-                        .frame(width: 220, height: 250)
-                        .rotationEffect(.init(degrees: -90))
-                    
-                    Text("\(self.seconds)")
-                        .font(.system(size: 100))
-                        .fontWeight(.bold)
-                        .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
-                }
-            }.padding(.top, 40)
-            .onAppear(perform: {
-                UNUserNotificationCenter.current().requestAuthorization(options: [.badge,.sound,.alert]) { (_, _) in
-                }
-            })
-            .onReceive(self.time) { (_) in
-                if self.start {
-                    if self.seconds != 0 {
-                        self.seconds -= 1
-                        withAnimation(.default){
-                            self.to = CGFloat(self.seconds) / 30
-                        }
-                    }
-                    else {
-                        self.start.toggle()
-                    }
-                }
-            } // closing countdown timer
+            ZStack {
+                Circle()
+                    .stroke(Color(red: 243/255, green: 189/255, blue: 126/255), lineWidth: 12)
+                    .frame(width: 230, height: 230)
+                
+                Text("\(timerManager.secondsLeft)")
+                    .font(.system(size: 150))
+                    .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
+                    .padding(.vertical, 60)
+            }
             
             HStack {
-                // Back Button
+                // BACK BUTTON
                 Button(action: {
                     // code
                 }, label: {
                     Image(systemName: "lessthan")
-                        .font(font)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60, height: 60)
                         .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
                         .padding()
                 })
-                // Play/Pause Button
+                
+                // PLAY/PAUSE BUTTON
                 Button(action: {
-                    if self.seconds == 15 {
-                        self.seconds = 0
-                        withAnimation(.default) {
-                            self.to = 0
-                        }
+                    if self.timerManager.timerMode == .initial {
+                        self.timerManager.setTimerLength(seconds: exerciseTime)
                     }
-                    self.start.toggle()
+                    self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
                 }, label: {
-                    
-                    Image(systemName: self.start ? "pause.circle.fill" : "play.circle.fill")
-                        .font(font)
+                    Image(systemName: timerManager.timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
                         .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
+                        .padding()
                 })
-                // Forward Button
+                
+                // FORWARD BUTTON
                 Button(action: {
                     // code
                 }, label: {
                     Image(systemName: "greaterthan")
-                        .font(font)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60, height: 60)
                         .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
                         .padding()
                 })
-            }.padding(.bottom, 10).padding(.top,40)
+            }
             
-            // Restart Button
+            // RESTART BUTTON
             Button(action: {
-                self.seconds = 30
-                withAnimation(.default) {
-                    self.to = 0
-                }
-            }) {
+                self.timerManager.reset()
+            }, label: {
                 HStack(spacing: 15) {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.white)
@@ -640,8 +607,12 @@ struct WorkingSessionView: View {
                 .padding()
                 .background((Color(red: 243/255, green: 189/255, blue: 126/255)))
                 .cornerRadius(50)
-            }
+            })
+            
+            Spacer()
         }
+        .offset(y: 50)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

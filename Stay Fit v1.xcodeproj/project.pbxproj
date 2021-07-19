@@ -14,6 +14,8 @@
 		0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AA2614EADE00BEB5A5 /* Preview Assets.xcassets */; };
 		0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */; };
 		0E3C85A626A1C71100C75A45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */; };
+		0E84B42626A5F4C800EF9B51 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84B42526A5F4C800EF9B51 /* Helper.swift */; };
+		0E84B42826A5F8EC00EF9B51 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84B42726A5F8EC00EF9B51 /* TimerManager.swift */; };
 		40BA9B4B8F960BC6B98C2901 /* Pods_Stay_Fit_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		0E3568AD2614EADE00BEB5A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3568AF2614EADE00BEB5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E84B42526A5F4C800EF9B51 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		0E84B42726A5F8EC00EF9B51 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		414B19E3D455446E4B6B0C5D /* Pods-Stay Fit v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stay Fit v1.release.xcconfig"; path = "Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1.release.xcconfig"; sourceTree = "<group>"; };
 		7AA906638EC09DEF4F5B901F /* Pods-Stay Fit v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stay Fit v1.debug.xcconfig"; path = "Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1.debug.xcconfig"; sourceTree = "<group>"; };
 		EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stay_Fit_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,8 @@
 				0E3568A12614EADE00BEB5A5 /* AppDelegate.swift */,
 				0E3568A32614EADE00BEB5A5 /* SceneDelegate.swift */,
 				0E3568A52614EADE00BEB5A5 /* ContentView.swift */,
+				0E84B42526A5F4C800EF9B51 /* Helper.swift */,
+				0E84B42726A5F8EC00EF9B51 /* TimerManager.swift */,
 				0E3568A72614EADE00BEB5A5 /* Assets.xcassets */,
 				0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */,
 				0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */,
@@ -220,6 +226,8 @@
 				0E3568A22614EADE00BEB5A5 /* AppDelegate.swift in Sources */,
 				0E3568A42614EADE00BEB5A5 /* SceneDelegate.swift in Sources */,
 				0E3568A62614EADE00BEB5A5 /* ContentView.swift in Sources */,
+				0E84B42826A5F8EC00EF9B51 /* TimerManager.swift in Sources */,
+				0E84B42626A5F4C800EF9B51 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
