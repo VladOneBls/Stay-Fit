@@ -1,53 +1,7 @@
-//
-//  ContentView.swift
-//  Stay Fit v1
-//
-//  Created by Vlad Balash on 31/03/2021.
-//
-
 import SwiftUI
 import FirebaseAuth
 
-class AppViewModel: ObservableObject {
-    
-    let auth = Auth.auth()
-    
-    @Published var signedIn = false
-    
-    var isSignedIn: Bool {
-        return auth.currentUser != nil
-    }
-    
-    func signIn(email: String, password: String) {
-        auth.signIn(withEmail: email, password: password) { [weak self] result, error in
-            guard result != nil, error == nil else {
-                return
-            }
-            DispatchQueue.main.async {
-                // Success
-                self?.signedIn = true
-            }
-        }
-    }
-    
-    func signUp(email: String, password: String) {
-        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
-            guard result != nil, error == nil else {
-                return
-            }
-            DispatchQueue.main.async {
-                // Success
-                self?.signedIn = true
-            }
-        }
-    }
-    
-    func signOut() {
-        try? auth.signOut()
-        self.signedIn = false
-    }
-}
-
+// VIEWS
 struct ContentView: View {
     
     @EnvironmentObject var viewModel: AppViewModel
@@ -55,20 +9,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if viewModel.signedIn {
-                //HomeView()
-                VStack {
-                    Text("You are signed in")
-
-                    Button {
-                        viewModel.signOut()
-                    } label: {
-                        Text("Sign Out")
-                            .frame(width: 200, height: 50)
-                            .background(Color.green)
-                            .foregroundColor(Color.blue)
-                            .padding()
-                    }
-                }
+                HomeView()
             }
             else {
                 SignInView()
@@ -80,19 +21,12 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-        
-    }
-}
-
 struct SignInView: View {
+    
+    @EnvironmentObject var viewModel: AppViewModel
     
     @State var email = ""
     @State var password = ""
-    
-    @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
         ZStack {
@@ -217,10 +151,10 @@ struct SignInView: View {
 
 struct SignUpView: View {
     
+    @EnvironmentObject var viewModel: AppViewModel
+    
     @State var email = ""
     @State var password = ""
-    
-    @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
         ZStack {
@@ -331,6 +265,9 @@ struct SignUpView: View {
 }
 
 struct HomeView: View {
+    
+    @EnvironmentObject var viewModel: AppViewModel
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -384,6 +321,20 @@ struct HomeView: View {
                         })
                     }
                     
+                    // SIGN OUT BUTTON
+                    Button {
+                        viewModel.signOut()
+                    } label: {
+                        Text("Sign Out")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 35, alignment: .center)
+                            .background(Color(red: 243/255, green: 189/255, blue: 126/255))
+                            .cornerRadius(5)
+                            .padding(.top, 30)
+                    }
+                    
                     Spacer()
                 }
             }
@@ -393,3 +344,397 @@ struct HomeView: View {
     }
 }
 
+// Workouts
+struct WorkoutsView: View {
+    
+    @EnvironmentObject var viewModel: AppViewModel
+    
+    @State var currentTab = 0
+    
+    @State private var cardioWorkouts = ["WARM UP", "LEGS ON FIRE", "STRONGER MUSCLES", "TONING", "BUTT & THIGHS", "1", "2", "3"]
+    @State private var absWorkouts = ["Workout 1", "Workout 2", "Workout 3", "Workout 4", "Workout 5", "Workout 6", "Workout 7", "Workout 8"]
+    @State private var legsWorkouts = ["Workout 1", "Workout 2", "Workout 3", "Workout 4", "Workout 5", "Workout 6", "Workout 7", "Workout 8"]
+    @State private var armsWorkouts = ["Workout 1", "Workout 2", "Workout 3", "Workout 4", "Workout 5", "Workout 6", "Workout 7", "Workout 8"]
+    
+    var body: some View {
+        ZStack {
+            Image("background")
+                .edgesIgnoringSafeArea(.all)
+                .navigationTitle("Workouts")
+            
+            ScrollView {
+                switch currentTab {
+                case 0: // CARDIO TAB
+                    ForEach(cardioWorkouts.indices, id: \.self) { index in
+                        NavigationLink(destination: DetailedWorkoutView(), label: {
+                            Text(self.cardioWorkouts[index])
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 360, height: 100, alignment: .center)
+                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                                .cornerRadius(8)
+                        }).padding(1)
+                    }
+                    
+                case 1: // ABS TAB
+                    ForEach(absWorkouts.indices, id: \.self) { index in
+                        NavigationLink(destination: DetailedWorkoutView(), label: {
+                            Text(self.absWorkouts[index])
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 360, height: 100, alignment: .center)
+                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                                .cornerRadius(8)
+                        }).padding(1)
+                    }
+                    
+                case 2: // LEGS TAB
+                    ForEach(legsWorkouts.indices, id: \.self) { index in
+                        NavigationLink(destination: DetailedWorkoutView(), label: {
+                            Text(self.legsWorkouts[index])
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 360, height: 100, alignment: .center)
+                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                                .cornerRadius(8)
+                        }).padding(1)
+                    }
+                    
+                case 3: // ARMS TAB
+                    ForEach(armsWorkouts.indices, id: \.self) { index in
+                        NavigationLink(destination: DetailedWorkoutView(), label: {
+                            Text(self.armsWorkouts[index])
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 360, height: 100, alignment: .center)
+                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                                .cornerRadius(8)
+                        }).padding(1)
+                    }
+                    
+                default:
+                    Text("ERROR")
+                } // closing switch
+            }.offset(y: 150) // closing ScrollView
+            
+            Picker(selection: $currentTab, label: Text("")) {
+                Text("Cardio").tag(0)
+                Text("Abs").tag(1)
+                Text("Legs").tag(2)
+                Text("Arms").tag(3)
+            }.pickerStyle(SegmentedPickerStyle())
+            .padding(.top, -340)
+            .padding(.horizontal, 20)
+        } // closing first ZStack
+    }
+}
+
+struct DetailedWorkoutView: View {
+    
+    @State var currentTab = 0
+    
+    @State private var workoutExercises = ["LUNGES", "SQUATS", "BIKE CRUNCHES", "LEG RAISES"]
+    
+    var body: some View {
+        ZStack {
+            Image("background")
+            
+            VStack {
+                ZStack {
+                    Rectangle()
+                        .frame(width: 390, height: 150, alignment: .center)
+                        .foregroundColor(.white)
+                    
+                    Text("Workout Name")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .frame(width: 360, height: 30, alignment: .leading)
+                        .offset(y: 50)
+                }
+                
+                Spacer()
+                
+                // CATEGORY PICKER
+                Picker(selection: $currentTab, label: Text("")) {
+                    Text("Beginner").tag(0)
+                    Text("Intermediate").tag(1)
+                    Text("Advanced").tag(2)
+                }.pickerStyle(SegmentedPickerStyle())
+                .padding(.top, -365)
+                .padding(.horizontal, 20)
+                .offset(y: 365)
+                
+                ScrollView {
+                    switch currentTab {
+                    case 0:
+                        ForEach(workoutExercises.indices, id: \.self) { index in
+                            HStack {
+                                Image("logo")
+                                    .resizable()
+                                    .frame(width: 100.0, height: 100.0)
+                                    .cornerRadius(5)
+                                    .padding(.leading, -122)
+                                Text("Exercise name")
+                                    .fontWeight(.bold)
+                            }
+                        }.offset(y: 33)
+                    case 1:
+                        ForEach(workoutExercises.indices, id: \.self) { index in
+                            HStack {
+                                Image("logo")
+                                    .resizable()
+                                    .frame(width: 100.0, height: 100.0)
+                                    .cornerRadius(5)
+                                    .padding(.leading, -122)
+                                Text("Exercise name")
+                                    .fontWeight(.bold)
+                            }
+                        }.offset(y: -110)
+                    case 2:
+                        ForEach(workoutExercises.indices, id: \.self) { index in
+                            HStack {
+                                Image("logo")
+                                    .resizable()
+                                    .frame(width: 100.0, height: 100.0)
+                                    .cornerRadius(5)
+                                    .padding(.leading, -122)
+                                Text("Exercise name")
+                                    .fontWeight(.bold)
+                            }
+                        }.offset(y: -110)
+                    default:
+                        Text("ERROR")
+                    } // closing switch
+                    
+                    NavigationLink(
+                        destination: WorkingSessionView(),
+                        label: {
+                            Text("START")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 370, height: 50, alignment: .center)
+                                .background(Color(red: 243/255, green: 189/255, blue: 126/255))
+                                .cornerRadius(5)
+                                .padding(.top, 50)
+                        }).padding(1)
+                } // closing ScrollView
+            } // closing first VStack
+        } // closing first ZStack
+    }
+}
+
+struct WorkingSessionView: View {
+    
+    let font = Font.system(size: 70).bold()
+    
+    @State var start = false
+    @State var to : CGFloat = 0
+    @State var seconds = 30
+    @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    var body: some View {
+        VStack {
+            Rectangle() // replace with workout image
+                .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
+                .frame(width: 350, height: 200)
+                .cornerRadius(20)
+            
+            Text("ExerciseName") // replace with exercise name
+                .font(.largeTitle).bold()
+                .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
+                .padding(.top, 10)
+            
+            // COUNTDOWN TIMER
+            VStack {
+                // Circle + Countdown
+                ZStack {
+                    Circle()
+                        .trim(from: 0, to: 1)
+                        .stroke(Color.black.opacity(0.09), style: StrokeStyle(lineWidth: 25, lineCap: .round))
+                        .frame(width: 220, height: 250)
+                    
+                    Circle()
+                        .trim(from: 0, to: self.to)
+                        .stroke((Color(red: 243/255, green: 189/255, blue: 126/255)), style: StrokeStyle(lineWidth: 25, lineCap: .round))
+                        .frame(width: 220, height: 250)
+                        .rotationEffect(.init(degrees: -90))
+                    
+                    Text("\(self.seconds)")
+                        .font(.system(size: 100))
+                        .fontWeight(.bold)
+                        .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
+                }
+            }.padding(.top, 40)
+            .onAppear(perform: {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.badge,.sound,.alert]) { (_, _) in
+                }
+            })
+            .onReceive(self.time) { (_) in
+                if self.start {
+                    if self.seconds != 0 {
+                        self.seconds -= 1
+                        withAnimation(.default){
+                            self.to = CGFloat(self.seconds) / 30
+                        }
+                    }
+                    else {
+                        self.start.toggle()
+                    }
+                }
+            } // closing countdown timer
+            
+            HStack {
+                // Back Button
+                Button(action: {
+                    // code
+                }, label: {
+                    Image(systemName: "lessthan")
+                        .font(font)
+                        .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
+                        .padding()
+                })
+                // Play/Pause Button
+                Button(action: {
+                    if self.seconds == 15 {
+                        self.seconds = 0
+                        withAnimation(.default) {
+                            self.to = 0
+                        }
+                    }
+                    self.start.toggle()
+                }, label: {
+                    
+                    Image(systemName: self.start ? "pause.circle.fill" : "play.circle.fill")
+                        .font(font)
+                        .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
+                })
+                // Forward Button
+                Button(action: {
+                    // code
+                }, label: {
+                    Image(systemName: "greaterthan")
+                        .font(font)
+                        .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
+                        .padding()
+                })
+            }.padding(.bottom, 10).padding(.top,40)
+            
+            // Restart Button
+            Button(action: {
+                self.seconds = 30
+                withAnimation(.default) {
+                    self.to = 0
+                }
+            }) {
+                HStack(spacing: 15) {
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(.white)
+                    Text("Restart")
+                        .foregroundColor(.white).bold()
+                }
+                .padding()
+                .background((Color(red: 243/255, green: 189/255, blue: 126/255)))
+                .cornerRadius(50)
+            }
+        }
+    }
+}
+
+// Exercises
+struct ExercisesView: View {
+    
+    @State private var exercises = ["Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", "Exercise 5", "Exercise 6", "Exercise 7", "Exercise 8", "Exercise 9"]
+    
+    var body: some View {
+        ZStack {
+            Image("background")
+                .edgesIgnoringSafeArea(.all)
+                .navigationTitle("Exercises")
+            
+            ScrollView {
+                ForEach(exercises.indices, id: \.self) { index in
+                    NavigationLink(destination: DetailedWorkoutView(), label: {
+                        Text(self.exercises[index])
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .frame(width: 360, height: 100, alignment: .center)
+                            .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                            .cornerRadius(8)
+                    }).padding(1)
+                }
+            }.offset(y: 110) // closing ScrollView
+        } // close first ZStack
+    }
+}
+
+struct DetailedExerciseView: View {
+    var body: some View {
+        Text("Detailed Exercise")
+    }
+}
+
+// Activity/Profile
+struct ActivityView: View {
+    var body: some View {
+        Text("Activity")
+    }
+}
+
+
+
+// CLASSES
+class AppViewModel: ObservableObject {
+    
+    let auth = Auth.auth()
+    
+    @Published var signedIn = false
+    
+    var isSignedIn: Bool {
+        return auth.currentUser != nil
+    }
+    
+    func signIn(email: String, password: String) {
+        auth.signIn(withEmail: email, password: password) { [weak self] result, error in
+            guard result != nil, error == nil else {
+                return
+            }
+            DispatchQueue.main.async {
+                // Success
+                self?.signedIn = true
+            }
+        }
+    }
+    
+    func signUp(email: String, password: String) {
+        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
+            guard result != nil, error == nil else {
+                return
+            }
+            DispatchQueue.main.async {
+                // Success
+                self?.signedIn = true
+            }
+        }
+    }
+    
+    func signOut() {
+        try? auth.signOut()
+        self.signedIn = false
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    
+    @EnvironmentObject var viewModel: AppViewModel
+    
+    static var previews: some View {
+        ContentView().environmentObject(AppViewModel())
+        
+    }
+}
