@@ -28,6 +28,7 @@ class TimerManager: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             if self.secondsLeft == 0 {
                 self.reset()
+                self.timerMode = .finished
             }
             self.secondsLeft -= 1
         })
