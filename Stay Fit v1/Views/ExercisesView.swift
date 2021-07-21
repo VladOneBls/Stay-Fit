@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExercisesView: View {
     
-    @State private var exercises = ["Lunges", "Squats", "Bike Crunches", "Leg Raises", "Exercise 5", "Exercise 6", "Exercise 7", "Exercise 8", "Exercise 9"]
+    @EnvironmentObject var exerciseViewModel: ExerciseViewModel
     
     var body: some View {
         ZStack {
@@ -18,9 +18,9 @@ struct ExercisesView: View {
                 .navigationTitle("Exercises")
             
             ScrollView {
-                ForEach(exercises.indices, id: \.self) { index in
+                ForEach(exerciseViewModel.exercises) { exercise in
                     NavigationLink(destination: DetailedExerciseView(), label: {
-                        Text(self.exercises[index])
+                        Text(exercise.name)
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -36,6 +36,6 @@ struct ExercisesView: View {
 
 struct ExercisesView_Previews: PreviewProvider {
     static var previews: some View {
-        ExercisesView()
+        ExercisesView().environmentObject(ExerciseViewModel())
     }
 }

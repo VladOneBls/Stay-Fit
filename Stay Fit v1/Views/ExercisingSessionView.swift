@@ -81,7 +81,7 @@ struct ExercisingSessionView: View {
 //            }
 //            else {
 //                Button(action: {
-//                    
+//
 //                }, label: {
 //                    Image(systemName: timerManager.timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
 //                        .resizable()

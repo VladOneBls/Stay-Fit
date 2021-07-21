@@ -309,7 +309,9 @@ struct ContentView_Previews: PreviewProvider {
     @EnvironmentObject var viewModel: AppViewModel
     
     static var previews: some View {
-        ContentView().environmentObject(AppViewModel())
+        ContentView()
+            .environmentObject(AppViewModel())
+            .environmentObject(ExerciseViewModel())
         
     }
 }
