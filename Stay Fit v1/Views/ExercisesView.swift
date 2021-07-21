@@ -25,7 +25,7 @@ struct ExercisesView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .frame(width: 360, height: 100, alignment: .center)
-                            .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
+                            .background(Color(red: 243/255, green: 189/255, blue: 126/255))
                             .cornerRadius(8)
                     }).padding(1)
                 }

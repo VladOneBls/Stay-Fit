@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DetailedExerciseView: View {
     
-    @State var exerciseName = "Lunges"
-    @State var description = "A lunge is a single-leg bodyweight exercise that works your hips, glutes, quads, hamstrings, and core and the hard-to-reach muscles of your inner thighs. Lunges can help you develop lower-body strength and endurance."
+    var exerciseName = "Lunges"
+    var description = "A lunge is a single-leg bodyweight exercise that works your hips, glutes, quads, hamstrings, and core and the hard-to-reach muscles of your inner thighs. Lunges can help you develop lower-body strength and endurance."
     //@State var howToPerform = ""
     
     var body: some View {
