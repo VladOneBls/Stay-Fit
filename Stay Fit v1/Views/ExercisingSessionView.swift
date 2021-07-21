@@ -16,26 +16,26 @@ struct ExercisingSessionView: View {
     
     var body: some View {
         VStack {
-            Image("lunges")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+//            Image("lunges")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
             
-//            Rectangle()
-//                .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
-//                .frame(width: 380, height: 200)
-//                .cornerRadius(20)
+            Rectangle()
+                .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
+                .frame(width: 390, height: 250)
             
             Text(exerciseName)
                 .font(.largeTitle).bold()
                 .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
+                .padding(1)
             
             ZStack {
                 Circle()
                     .stroke(Color(red: 243/255, green: 189/255, blue: 126/255), lineWidth: 12)
-                    .frame(width: 280, height: 280)
+                    .frame(width: 230, height: 230)
                 
                 if timerManager.timerMode == .finished {
-                    Text("End")
+                    Text("0")
                         .font(.system(size: 150))
                         .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
                         .padding(.vertical, 60)
@@ -62,7 +62,7 @@ struct ExercisingSessionView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 80, height: 80)
                     .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
-                    .padding()
+                    .padding(.top, 3)
             })
             
             // RESTART BUTTON
@@ -78,11 +78,13 @@ struct ExercisingSessionView: View {
                 .padding()
                 .background((Color(red: 243/255, green: 189/255, blue: 126/255)))
                 .cornerRadius(50)
+                .padding(.top, 15)
+
             })
             
             Spacer()
         }
-        .offset(y: 50)
+        .offset(y: 35)
         .edgesIgnoringSafeArea(.all)
     }
 }

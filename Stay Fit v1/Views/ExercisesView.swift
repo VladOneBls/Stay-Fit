@@ -20,7 +20,7 @@ struct ExercisesView: View {
             ScrollView {
                 ForEach(exerciseViewModel.exercises) { ex in
                     NavigationLink(
-                        destination: DetailedExerciseView(exerciseName: ex.name, description: ex.description),
+                        destination: DetailedExerciseView(exerciseName: ex.name, steps: ex.steps),
                         label: {
                         Text(ex.name)
                             .font(.title2)

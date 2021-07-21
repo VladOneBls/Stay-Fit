@@ -12,8 +12,10 @@ struct ExerciseModel: Identifiable {
     
     let id: String = UUID().uuidString
     let name: String
+    let logo: String
     let picture: String
-    let description: String
+    let video: String
+    let steps: [String]
     let targetMuscles: [String]
     
 }

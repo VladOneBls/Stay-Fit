@@ -12,28 +12,39 @@ struct DetailedExerciseView: View {
     @EnvironmentObject var exerciseViewModel: ExerciseViewModel
         
     let exerciseName: String
-    let description: String
+    let steps: [String]
     
     var body: some View {
         ZStack {
             Image("background").edgesIgnoringSafeArea(.all)
             
             VStack {
-                Image("lunges")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                
-//                Rectangle()
-//                    .foregroundColor(.white)
-//                    .frame(width: 380, height: 200)
-//                    .cornerRadius(20)
+                Rectangle()
+                    .foregroundColor(.white)
+                    .frame(width: 390, height: 250)
                 
                 Text(exerciseName)
                     .font(.largeTitle).bold()
                     .foregroundColor(.black)
                 
-                Text(description)
-                    .padding(40)
+//                Text(description)
+//                    .padding(40)
+                
+                List {
+                    ForEach(0..<steps.count) { index in
+                        HStack (spacing: 15) {
+                            Text("\(index+1)")
+                                .font(.title2).bold()
+                                .foregroundColor(.gray)
+                            
+                            Text(steps[index])
+                                .foregroundColor(.black)
+                                .padding(3)
+                        }
+                    }
+                }
+                .frame(width: 370, height: 275)
+                .cornerRadius(10)
                 
                 Spacer()
                 
@@ -48,15 +59,18 @@ struct DetailedExerciseView: View {
                             .background(Color(red: 243/255, green: 189/255, blue: 126/255))
                             .cornerRadius(5)
                             .padding(.top, 50)
-                    }).padding(.bottom, 120)
-            }.padding(.top, 20)
+                    }).padding(.bottom, 150)
+            }
+            .offset(y: 35)
+            .edgesIgnoringSafeArea(.all)
+            
         } // closing first ZStack
     }
 }
 
 struct DetailedExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedExerciseView(exerciseName: "Exercise Name", description: "Description")
+        DetailedExerciseView(exerciseName: "Exercise Name", steps: ["1", "2", "3", "4", "5"])
             .environmentObject(ExerciseViewModel())
     }
 }
