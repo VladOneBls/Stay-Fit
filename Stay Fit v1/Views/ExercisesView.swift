@@ -18,9 +18,11 @@ struct ExercisesView: View {
                 .navigationTitle("Exercises")
             
             ScrollView {
-                ForEach(exerciseViewModel.exercises) { exercise in
-                    NavigationLink(destination: DetailedExerciseView(), label: {
-                        Text(exercise.name)
+                ForEach(exerciseViewModel.exercises) { ex in
+                    NavigationLink(
+                        destination: DetailedExerciseView(exerciseName: ex.name, description: ex.description),
+                        label: {
+                        Text(ex.name)
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.white)

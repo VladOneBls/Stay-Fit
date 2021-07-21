@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ExercisingSessionView: View {
     
+    @EnvironmentObject var exerciseViewModel: ExerciseViewModel
     @ObservedObject var timerManager = TimerManager()
     
-    @State var exerciseName = "Lunges"
+    let exerciseName: String
     
     var body: some View {
         VStack {
@@ -47,6 +48,7 @@ struct ExercisingSessionView: View {
                 }
             }
             
+            // PLAY/PAUSE BUTTON
             Button(action: {
                 if timerManager.timerMode != .finished {
                     if self.timerManager.timerMode == .initial {
@@ -62,36 +64,6 @@ struct ExercisingSessionView: View {
                     .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
                     .padding()
             })
-            
-            // PLAY/PAUSE BUTTON
-//            if timerManager.timerMode != .finished {
-//                Button(action: {
-//                    if self.timerManager.timerMode == .initial {
-//                        self.timerManager.setTimerLength(seconds: 5)
-//                    }
-//                    self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
-//                }, label: {
-//                    Image(systemName: timerManager.timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 80, height: 80)
-//                        .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
-//                        .padding()
-//                })
-//            }
-//            else {
-//                Button(action: {
-//
-//                }, label: {
-//                    Image(systemName: timerManager.timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 80, height: 80)
-//                        .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
-//                        .padding()
-//                })
-//            }
-            
             
             // RESTART BUTTON
             Button(action: {
@@ -117,6 +89,6 @@ struct ExercisingSessionView: View {
 
 struct ExercisingSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        ExercisingSessionView()
+        ExercisingSessionView(exerciseName: "Exercise Name").environmentObject(ExerciseViewModel())
     }
 }

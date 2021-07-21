@@ -5,6 +5,7 @@ import FirebaseAuth
 struct ContentView: View {
     
     @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var exerciseViewModel: ExerciseViewModel
     
     var body: some View {
         NavigationView {
@@ -15,6 +16,7 @@ struct ContentView: View {
                 SignInView()
             }
         }
+        .environmentObject(exerciseViewModel)
         .onAppear {
             viewModel.signedIn = viewModel.isSignedIn
         }

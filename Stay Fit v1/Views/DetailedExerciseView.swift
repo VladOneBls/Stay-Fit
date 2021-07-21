@@ -9,9 +9,10 @@ import SwiftUI
 
 struct DetailedExerciseView: View {
     
-    var exerciseName = "Lunges"
-    var description = "A lunge is a single-leg bodyweight exercise that works your hips, glutes, quads, hamstrings, and core and the hard-to-reach muscles of your inner thighs. Lunges can help you develop lower-body strength and endurance."
-    //@State var howToPerform = ""
+    @EnvironmentObject var exerciseViewModel: ExerciseViewModel
+        
+    let exerciseName: String
+    let description: String
     
     var body: some View {
         ZStack {
@@ -37,7 +38,7 @@ struct DetailedExerciseView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: ExercisingSessionView(),
+                    destination: ExercisingSessionView(exerciseName: exerciseName),
                     label: {
                         Text("START")
                             .font(.title3)
@@ -55,6 +56,7 @@ struct DetailedExerciseView: View {
 
 struct DetailedExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedExerciseView()
+        DetailedExerciseView(exerciseName: "Exercise Name", description: "Description")
+            .environmentObject(ExerciseViewModel())
     }
 }
