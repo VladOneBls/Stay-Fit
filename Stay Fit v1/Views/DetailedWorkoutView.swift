@@ -49,8 +49,9 @@ struct DetailedWorkoutView: View {
                     case 0:
                         ForEach(workoutExercises.indices, id: \.self) { index in
                             HStack {
-                                Image("logoLunges")
+                                Image("logoLegBumbbellCurls")
                                     .resizable()
+                                    .aspectRatio(contentMode: .fit)
                                     .frame(width: 100.0, height: 100.0)
                                     .cornerRadius(5)
                                     .padding(.leading, 25)
@@ -63,7 +64,7 @@ struct DetailedWorkoutView: View {
                     case 1:
                         ForEach(workoutExercises.indices, id: \.self) { index in
                             HStack {
-                                Image("logoLunges")
+                                Image("logoSquats")
                                     .resizable()
                                     .frame(width: 100.0, height: 100.0)
                                     .cornerRadius(5)
@@ -75,7 +76,7 @@ struct DetailedWorkoutView: View {
                     case 2:
                         ForEach(workoutExercises.indices, id: \.self) { index in
                             HStack {
-                                Image("logoLunges")
+                                Image("logoSquats")
                                     .resizable()
                                     .frame(width: 100.0, height: 100.0)
                                     .cornerRadius(5)

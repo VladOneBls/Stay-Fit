@@ -30,7 +30,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise strengthens your quadriceps, glutes and hamstrings
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "SQUATS",
-                          logo: "",
+                          logo: "logoSquats",
                           picture: "",
                           video: "",
                           steps: ["Stand with your feet shoulder width apart and your arms stretched forward",
@@ -41,7 +41,7 @@ class ExerciseViewModel: ObservableObject {
                                   "Inhale when you go down and exhale when you go up"],
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "BICYCLE CRUNCHES",
-                          logo: "",
+                          logo: "logoBycicleCrunches",
                           picture: "",
                           video: "",
                           steps: ["Lie on your back with your hands behind your ears and legs lifted up",
@@ -52,7 +52,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your internal and external obliques
                           targetMuscles: ["abs"]),
             ExerciseModel(name: "LEG RAISES",
-                          logo: "",
+                          logo: "logoLegRaises",
                           picture: "",
                           video: "",
                           steps: ["Lie on your back. Put your hands beneath your hips for support",
@@ -63,7 +63,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise targets your lower abdominals
                           targetMuscles: ["abs"]),
             ExerciseModel(name: "SIDE-LYING LEG RAISES",
-                          logo: "",
+                          logo: "logoSideLyingLegRaises",
                           picture: "",
                           video: "",
                           steps: ["Lie on your side with your head rested on your left arm",
@@ -75,7 +75,7 @@ class ExerciseViewModel: ObservableObject {
                           //This is a great exercise for your glutes
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "JUMPING JACKS",
-                          logo: "",
+                          logo: "logoJumpingJacks",
                           picture: "",
                           video: "",
                           steps: ["Jump up, spread your feet and bring your arms above your head",
@@ -84,7 +84,7 @@ class ExerciseViewModel: ObservableObject {
                           // This is a full body exercise that works all your muscle groups
                           targetMuscles: ["cardio", "legs", "arms"]),
             ExerciseModel(name: "STAR CRAWL",
-                          logo: "",
+                          logo: "logoStarCrawl",
                           picture: "",
                           video: "",
                           steps: ["Start on all fours with your hands under your shoulders and your knee under your hips",
@@ -95,7 +95,7 @@ class ExerciseViewModel: ObservableObject {
                           // This is a good exercise for your core, legs and upper body
                           targetMuscles: ["abs", "legs", "arms"]),
             ExerciseModel(name: "SIDE CRUNCHES",
-                          logo: "",
+                          logo: "logoSideCrunches",
                           picture: "",
                           video: "",
                           steps: ["Lie on your right side with your right foot behind your left foot",
@@ -106,7 +106,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise targets your obliques
                           targetMuscles: ["abs"]),
             ExerciseModel(name: "HIGH KNEES",
-                          logo: "",
+                          logo: "logoHighKnees",
                           picture: "",
                           video: "",
                           steps: ["Run in place while pulling your knees as high as possible with each step",
@@ -116,7 +116,7 @@ class ExerciseViewModel: ObservableObject {
                           // This cardio exercise can strenghten your heart and lungs
                           targetMuscles: ["cardio"]),
             ExerciseModel(name: "MOUNTAIN CLIMBER",
-                          logo: "",
+                          logo: "logoMountainClimber",
                           picture: "",
                           video: "",
                           steps: ["Start in a push-up position",
@@ -126,8 +126,8 @@ class ExerciseViewModel: ObservableObject {
                                   "Take steady and deep breaths"],
                           // This exercise can strenghten your cardiovascular system
                           targetMuscles: ["cardio", "abs"]),
-            ExerciseModel(name: "LEG DUMBBELL CURL",
-                          logo: "",
+            ExerciseModel(name: "LEG DUMBBELL CURLS",
+                          logo: "logoLegBumbbellCurls",
                           picture: "",
                           video: "",
                           steps: ["Stand against a wall",
@@ -137,8 +137,8 @@ class ExerciseViewModel: ObservableObject {
                                   "Don't fully extend your biceps when lowering your ankle"],
                           // This exercise targets your biceps
                           targetMuscles: ["arms"]),
-            ExerciseModel(name: "HEEL TOUCH",
-                          logo: "",
+            ExerciseModel(name: "HEEL TOUCHES",
+                          logo: "logoHeelTouches",
                           picture: "",
                           video: "",
                           steps: ["Lie on your back with your feet flat on the floor",
@@ -150,7 +150,7 @@ class ExerciseViewModel: ObservableObject {
                           // It's a great exercise for all of your abdominal muscles
                           targetMuscles: ["abs"]),
             ExerciseModel(name: "PUSH-UPS",
-                          logo: "",
+                          logo: "logoPushUps",
                           picture: "",
                           video: "",
                           steps: ["Lay prone with your body in a straight line",
@@ -161,7 +161,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your chest, abs and triceps
                           targetMuscles: ["abs", "arms"]),
             ExerciseModel(name: "ABDOMINAL CRUNCHES",
-                          logo: "",
+                          logo: "logoAbdominalCrunches",
                           picture: "",
                           video: "",
                           steps: ["Lie on your back with your knees bent and your arms streched forward",
@@ -172,7 +172,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise primarily works your rectus abdominis
                           targetMuscles: ["abs"]),
             ExerciseModel(name: "TRICEPS DIPS",
-                          logo: "",
+                          logo: "logoTricepsDips",
                           picture: "",
                           video: "",
                           steps: ["Press your hands on the edge of a chair",
@@ -183,7 +183,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your triceps
                           targetMuscles: ["arms"]),
             ExerciseModel(name: "ALTERNATING HOOKS",
-                          logo: "",
+                          logo: "logoAlternatingHooks",
                           picture: "",
                           video: "",
                           steps: ["Stand with your feet shoulder width apart",
@@ -194,7 +194,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your shoulders
                           targetMuscles: ["cardio", "arms"]),
             ExerciseModel(name: "RUSSIAN TWISTS",
-                          logo: "",
+                          logo: "logoRussianTwists",
                           picture: "",
                           video: "",
                           steps: ["Sit your feet slightly lifted and back tilted backward",
@@ -205,7 +205,7 @@ class ExerciseViewModel: ObservableObject {
                                   "Tighten your abs"],
                           targetMuscles: ["abs"]),
             ExerciseModel(name: "PLANK",
-                          logo: "",
+                          logo: "logoPlank",
                           picture: "",
                           video: "",
                           steps: ["Start with your toes and forearms supported on the ground",
@@ -217,7 +217,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise engages your abs and glutes
                           targetMuscles: ["abs", "legs"]),
             ExerciseModel(name: "INCHWORMS",
-                          logo: "",
+                          logo: "logoInchworms",
                           picture: "",
                           video: "",
                           steps: ["Stand with your feet shoulder width apart",
@@ -229,7 +229,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exerccise works your shoulders and streches your hamstrings
                           targetMuscles: ["cardio", "abs", "arms"]),
             ExerciseModel(name: "HOVER PUSH-UPS",
-                          logo: "",
+                          logo: "logoHoverPushUps",
                           picture: "",
                           video: "",
                           steps: ["Start in the push-up position with your hands a little wider than shoulder width apart",
@@ -241,7 +241,7 @@ class ExerciseViewModel: ObservableObject {
                           // This is a good exercise for all your upper body muscles
                           targetMuscles: ["arms"]),
             ExerciseModel(name: "SIT-UPS",
-                          logo: "",
+                          logo: "logoSitUps",
                           picture: "",
                           video: "",
                           steps: ["Lie on your back with your hands behind your ears",
@@ -252,7 +252,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your abs
                           targetMuscles: ["abs"]),
             ExerciseModel(name: "ARM SCISSORS",
-                          logo: "",
+                          logo: "logoArmScissors",
                           picture: "",
                           video: "",
                           steps: ["Stand with your feet shoulder width apart",
@@ -264,7 +264,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your deltoids
                           targetMuscles: ["arms"]),
             ExerciseModel(name: "BUTT BRIDGE",
-                          logo: "",
+                          logo: "logoButtBridge",
                           picture: "",
                           video: "",
                           steps: ["Lie on your back with your feet flat on the floor and arms at your sides",
@@ -275,7 +275,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise really works your glutes
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "SKIPPING WITHOUT ROPE",
-                          logo: "",
+                          logo: "logoSkippingWithoutRope",
                           picture: "",
                           video: "",
                           steps: ["Pretend to hold a skipping rope handle in each hand",
@@ -286,7 +286,7 @@ class ExerciseViewModel: ObservableObject {
                           // This is a good warm-up exercise
                           targetMuscles: ["cardio"]),
             ExerciseModel(name: "MILITARY PUSH-UPS",
-                          logo: "",
+                          logo: "logoMilitaryPushUps",
                           picture: "",
                           video: "",
                           steps: ["Start in a push-up position with your hands directly under your shoulders or as close as you can",
@@ -297,8 +297,8 @@ class ExerciseViewModel: ObservableObject {
                                   "Keep your body straight"],
                           // This exercise works your triceps
                           targetMuscles: ["arms"]),
-            ExerciseModel(name: "ARM CURLS CRUNCH",
-                          logo: "",
+            ExerciseModel(name: "ARM CURLS CRUNCHS",
+                          logo: "logoArmCurlsCrunchs",
                           picture: "",
                           video: "",
                           steps: ["Lie on your left side with you knees bent and lifted",
@@ -310,7 +310,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your biceps
                           targetMuscles: ["arms"]),
             ExerciseModel(name: " DOORWAY CURLS",
-                          logo: "",
+                          logo: "logoDoorwayCurls",
                           picture: "",
                           video: "",
                           steps: ["Stand with your left arm close to a wall",
@@ -320,7 +320,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your biceps
                           targetMuscles: ["arms"]),
             ExerciseModel(name: "PUNCHES",
-                          logo: "",
+                          logo: "logoPunches",
                           picture: "",
                           video: "",
                           steps: ["Stand with one of your legs forward and your knees slightly bent",
@@ -331,7 +331,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your shoulders, biceps, triceps and forearms
                           targetMuscles: ["cardio", "arms"]),
             ExerciseModel(name: "ARM CIRCLES",
-                          logo: "",
+                          logo: "logoArmCircles",
                           picture: "",
                           video: "",
                           steps: ["Stand with your arms extended to the sides at shoulder height",
@@ -343,7 +343,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your deltoids
                           targetMuscles: ["arms"]),
             ExerciseModel(name: "FROGGY GLUTE LIFTS",
-                          logo: "",
+                          logo: "logoFroggyGluteLifts",
                           picture: "",
                           video: "",
                           steps: ["Lie on your stomach with your knees bent and apart",
@@ -354,7 +354,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise targets your glutes and it's alo good for your lower back
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "STAR JUMPS",
-                          logo: "",
+                          logo: "logoStarJumps",
                           picture: "",
                           video: "",
                           steps: ["Start in a squat position with your hands touching your feet",
@@ -364,7 +364,7 @@ class ExerciseViewModel: ObservableObject {
                           // This is a cardio exercise that can help burn calories and fat
                           targetMuscles: ["cardio", "legs"]),
             ExerciseModel(name: "SUMO SQUAT CALF RAISES WITH WALL",
-                          logo: "",
+                          logo: "logoSumoSquatCalfRaisesWithWall",
                           picture: "",
                           video: "",
                           steps: ["Stand with your hands on the wall and your feet a little wider than shoulder width apart",
@@ -376,7 +376,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your calves, glutes and inner thighs
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "PRONE FLUTTER KICKS",
-                          logo: "",
+                          logo: "logoProneFlutterKicks",
                           picture: "",
                           video: "",
                           steps: ["Lie on your stomach with your legs slightly lifted and your chin on your arms",
@@ -387,7 +387,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise focuses on your glutes and hamstrings
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "GLUTE KICKBACK CROSSOVER",
-                          logo: "",
+                          logo: "logoGluteKickbackCrossover",
                           picture: "",
                           video: "",
                           steps: ["Start with your knees under your hips and your hands directly under your shoulders",
@@ -401,7 +401,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise works your glutes
                           targetMuscles: ["legs"]),
             ExerciseModel(name: "BURPEES",
-                          logo: "",
+                          logo: "logoBurpees",
                           picture: "",
                           video: "",
                           steps: ["Stand with your feet shoulder width apart",
@@ -412,7 +412,7 @@ class ExerciseViewModel: ObservableObject {
                           // This is a full body exercise that works all your large muscles groups
                           targetMuscles: ["cardio", "legs", "arms"]),
             ExerciseModel(name: "JUMPING SQUATS",
-                          logo: "",
+                          logo: "logoJumpingSquats",
                           picture: "",
                           video: "",
                           steps: ["Start in the squat position with you thighs parallel to the floor and your arms in front of your chest",
@@ -423,8 +423,8 @@ class ExerciseViewModel: ObservableObject {
                                   "Your knees shouldn't go over your toes when squatting down"],
                           // This exercise works all your large muscle groups
                           targetMuscles: ["cardio", "legs"]),
-            ExerciseModel(name: "SIDE HOP",
-                          logo: "",
+            ExerciseModel(name: "SIDE HOPS",
+                          logo: "logoSideHops",
                           picture: "",
                           video: "",
                           steps: ["Put your hands in front of you to keep balance",
@@ -433,8 +433,8 @@ class ExerciseViewModel: ObservableObject {
                                   "Breathe regularly"],
                           // This is a good cardio exercise that can get your legs involved and your heart rate up
                           targetMuscles: ["cardio"]),
-            ExerciseModel(name: "SKATER JUMP",
-                          logo: "",
+            ExerciseModel(name: "SKATER JUMPS",
+                          logo: "logoSkaterJumps",
                           picture: "",
                           video: "",
                           steps: ["Stand with your legs slightly bent and your arms at your sides",
@@ -445,7 +445,7 @@ class ExerciseViewModel: ObservableObject {
                           // This exercise is good for your cardiovascular system
                           targetMuscles: ["cardio"]),
             ExerciseModel(name: "QUICK FEET",
-                          logo: "",
+                          logo: "logoQuickFeet",
                           picture: "",
                           video: "",
                           steps: ["Stand with your feet shoulder width apart",
@@ -456,8 +456,8 @@ class ExerciseViewModel: ObservableObject {
                                   "Take steady and deep breaths"],
                           // This is a cardio exercise that can warmup your body, work your quadriceps and calves, and improve your speed and agility
                           targetMuscles: ["cardio"]),
-            ExerciseModel(name: "MOUNTAIN CLIMBER SQUAT THRUST",
-                          logo: "",
+            ExerciseModel(name: "MOUNTAIN CLIMBER SQUAT THRUSTS",
+                          logo: "logoMountainClimberSquatThrusts",
                           picture: "",
                           video: "",
                           steps: ["Stand with your feet shoulder width apart",

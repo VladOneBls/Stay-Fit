@@ -56,7 +56,7 @@ struct SignInView: View {
                 
                 Spacer()
                 
-                Image("logo")
+                Image("appLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100.0, height: 100.0)
@@ -184,7 +184,7 @@ struct SignUpView: View {
                 
                 Spacer()
                 
-                Image("logo")
+                Image("appLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100.0, height: 100.0)

@@ -27,22 +27,20 @@ struct DetailedExerciseView: View {
                     .font(.largeTitle).bold()
                     .foregroundColor(.black)
                 
-//                Text(description)
-//                    .padding(40)
-                
                 List {
                     ForEach(0..<steps.count) { index in
                         HStack (spacing: 15) {
                             Text("\(index+1)")
                                 .font(.title2).bold()
                                 .foregroundColor(.gray)
-                            
+
                             Text(steps[index])
                                 .foregroundColor(.black)
                                 .padding(3)
                         }
                     }
                 }
+                    
                 .frame(width: 370, height: 400)
                 .cornerRadius(10)
                 
