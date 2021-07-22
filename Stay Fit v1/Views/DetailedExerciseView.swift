@@ -43,10 +43,8 @@ struct DetailedExerciseView: View {
                         }
                     }
                 }
-                .frame(width: 370, height: 275)
+                .frame(width: 370, height: 400)
                 .cornerRadius(10)
-                
-                Spacer()
                 
                 NavigationLink(
                     destination: ExercisingSessionView(exerciseName: exerciseName),
@@ -58,8 +56,8 @@ struct DetailedExerciseView: View {
                             .frame(width: 370, height: 50, alignment: .center)
                             .background(Color(red: 243/255, green: 189/255, blue: 126/255))
                             .cornerRadius(5)
-                            .padding(.top, 50)
-                    }).padding(.bottom, 150)
+                            .padding(.bottom, 10)
+                    })
             }
             .offset(y: 35)
             .edgesIgnoringSafeArea(.all)
